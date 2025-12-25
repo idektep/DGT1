@@ -1,4 +1,4 @@
-version: '3.8'
+#version: '3.8'
 
 services:
   # =========================================================
@@ -13,8 +13,6 @@ services:
     volumes:
       - emqx_data:/opt/emqx/data
       - emqx_log:/opt/emqx/log
-    environment:
-      EMQX_MANAGEMENT__DEFAULT_ADMIN_PASSWORD: adminadmin
     restart: unless-stopped
     networks:
       - iot_stack_net
@@ -51,7 +49,7 @@ services:
     ports:
       - "1880:1880"
     volumes:
-      - nodered:/data
+      - nodered_data:/data
     restart: unless-stopped
     networks:
       - iot_stack_net
