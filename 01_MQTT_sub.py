@@ -1,8 +1,8 @@
 import paho.mqtt.client as mqtt
 
-BROKER = "broker.emqx.io"
+BROKER = "......."
 PORT = 1883
-TOPIC = "idt/sensor"
+TOPIC = "dgt/sensor"
 
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code " + str(rc))
@@ -16,4 +16,5 @@ client.on_connect = on_connect
 client.on_message = on_message
 client.connect(BROKER, PORT, 60)
 client.loop_forever()
+
 
